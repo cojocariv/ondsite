@@ -1,34 +1,47 @@
 <?php
 // index.php – Landing hosting 1C + hosting/VPS/domenii, inspirat cromatic de ihc.ru, cu Tailwind.
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require __DIR__ . '/phpmailer/src/Exception.php';
+require __DIR__ . '/phpmailer/src/PHPMailer.php';
+require __DIR__ . '/phpmailer/src/SMTP.php';
 $contact_success = '';
 $contact_error   = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Colectăm datele din formular
     $nume   = isset($_POST['nume'])   ? trim($_POST['nume'])   : '';
     $email  = isset($_POST['email'])  ? trim($_POST['email'])  : '';
     $mesaj  = isset($_POST['mesaj'])  ? trim($_POST['mesaj'])  : '';
-    // Validare simplă
     if ($nume === '' || $email === '' || $mesaj === '') {
         $contact_error = 'Te rugăm să completezi numele, emailul și mesajul.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $contact_error = 'Adresa de email nu este validă.';
     } else {
-        // Date pentru email
-        $to      = 'sales@ondsolutions.md';          // destinatarul final
-        $from    = 'contact@ondsolutions.md';        // adresa de pe domeniu
-        $subject = 'Mesaj nou de pe formularul Smart Solutions';
-        $body  = "Ai primit un mesaj nou de pe site.\r\n\r\n";
-        $body .= "Nume: {$nume}\r\n";
-        $body .= "Email: {$email}\r\n\r\n";
-        $body .= "Mesaj:\r\n{$mesaj}\r\n";
-        $headers   = "From: \"Smart Solutions\" <{$from}>\r\n";
-        $headers  .= "Reply-To: {$email}\r\n";
-        $headers  .= "Content-Type: text/plain; charset=UTF-8\r\n";
-        if (@mail($to, $subject, $body, $headers)) {
+        $mail = new PHPMailer(true);
+        try {
+            // Setări SMTP
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.ondsolutions.md';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'contact@ondsolutions.md';
+            $mail->Password   = 'AAD1sup@$$'; // pune parola reală a căsuței
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // pentru port 465
+            $mail->Port       = 465;
+            $mail->CharSet    = 'UTF-8';
+            // Expeditor / destinatar
+            $mail->setFrom('contact@ondsolutions.md', 'Smart Solutions');
+            $mail->addAddress('cojocari.v88@gmail.com');
+            $mail->addReplyTo($email, $nume);
+            // Conținut
+            $mail->Subject = 'Mesaj nou de pe formularul Smart Solutions';
+            $body  = "Ai primit un mesaj nou de pe site.\r\n\r\n";
+            $body .= "Nume: {$nume}\r\n";
+            $body .= "Email: {$email}\r\n\r\n";
+            $body .= "Mesaj:\r\n{$mesaj}\r\n";
+            $mail->Body = $body;
+            $mail->send();
             $contact_success = 'Mesajul a fost trimis cu succes. Îți vom răspunde în cel mai scurt timp.';
-            // Golește câmpurile după trimitere reușită
             $nume = $email = $mesaj = '';
-        } else {
+        } catch (Exception $e) {
             $contact_error = 'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct pe email.';
         }
     }
