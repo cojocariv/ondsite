@@ -231,7 +231,7 @@
 
                     <div class="space-y-1">
                         <div class="flex items-center justify-between text-[11px] text-slate-600">
-                            <span>Instanțe 1C paralele</span>
+                            <span>Baze 1C conectate</span>
                             <span id="fg-inst-val" class="font-medium text-slate-900">1</span>
                         </div>
                         <input
@@ -763,7 +763,7 @@
                 <p class="mb-1 text-[11px] font-semibold text-slate-800">Servicii</p>
                 <div class="space-y-1">
                     <a href="#1c" class="block hover:text-ihcBlue">Hosting 1C</a>
-                    <a href="#tarife" class="block hover:text-ihcBlue">Găzduire shared</a>
+                    <a href="#tarife" class="block hover:text-ihcBlue">Găzduire</a>
                     <a href="#vps" class="block hover:text-ihcBlue">VPS / VDS</a>
                     <a href="#domenii" class="block hover:text-ihcBlue">Domenii</a>
                 </div>
@@ -774,14 +774,13 @@
                     <a href="#" class="block hover:text-ihcBlue">Despre noi</a>
                     <a href="#" class="block hover:text-ihcBlue">Politica de confidențialitate</a>
                     <a href="#" class="block hover:text-ihcBlue">Termeni și condiții</a>
-                    <a href="#" class="block hover:text-ihcBlue">ANPC / soluționare litigii</a>
                 </div>
             </div>
         </div>
 
         <div class="mt-4 flex flex-col gap-2 text-[11px] text-slate-600 sm:flex-row sm:items-center sm:justify-between">
             <span>© <?php echo date('Y'); ?> OND SOLUTIONS SRL. Toate drepturile rezervate.</span>
-            <span>Metode de plată: card, transfer bancar, facturare pentru firme.</span>
+            <span>Metode de plată: card, transfer bancar, facturare.</span>
         </div>
     </div>
 </footer>
@@ -809,7 +808,7 @@
         document.getElementById('fg-inst-val').textContent = inst;
 
         let base = 150;
-        base += (users - 1) * 15;
+        base += (users - 1) * 50;
         base += (space - 10) / 10 * 8;
         base += (inst - 1) * 30;
 
