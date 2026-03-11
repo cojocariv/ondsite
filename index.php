@@ -400,7 +400,7 @@
 
             <div class="mt-8 grid gap-5 md:grid-cols-3">
                 <!-- Plan 1 -->
-                <article class="no-select card-anim glass-soft border border-slate-200 rounded-2xl p-4 pb-5">
+                <article id="plan1-card" class="no-select card-anim glass-soft border border-slate-200 rounded-2xl p-4 pb-5">
                     <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                         <span class="text-[11px] font-medium text-slate-800">Începători & bloguri</span>
@@ -427,12 +427,12 @@
                         </li>
                     </ul>
                     <div class="mt-4">
-                        <p class="text-xs text-slate-500">De la</p>
-                        <p class="text-xl font-semibold text-slate-900">
-                            9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>
-                        </p>
-                        <p class="text-[11px] text-slate-500">la plata anuală</p>
-                    </div>
+    <p class="text-xs text-slate-500">De la</p>
+    <p id="plan1-price" class="text-xl font-semibold text-slate-900">
+        9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>
+    </p>
+    <p id="plan1-note" class="text-[11px] text-slate-500">la plata anuală</p>
+</div>
                 </article>
 
                 <!-- Plan 2 -->
@@ -843,7 +843,22 @@
         if (el) el.addEventListener('input', calcPrice1C);
     });
     calcPrice1C();
+    // Hover price change for first hosting plan
+    const plan1Card  = document.getElementById('plan1-card');
+    const plan1Price = document.getElementById('plan1-price');
+    const plan1Note  = document.getElementById('plan1-note');
 
+    if (plan1Card && plan1Price && plan1Note) {
+        plan1Card.addEventListener('mouseenter', () => {
+            plan1Price.innerHTML = '15 lei <span class="text-xs font-normal text-slate-500">/ lună</span>';
+            plan1Note.textContent = 'la plata lunară';
+        });
+
+        plan1Card.addEventListener('mouseleave', () => {
+            plan1Price.innerHTML = '9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>';
+            plan1Note.textContent = 'la plata anuală';
+        });
+    }
     function handleDomainCheck(e) {
         e.preventDefault();
         const input = document.getElementById('domain-input');
