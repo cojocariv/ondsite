@@ -1,5 +1,38 @@
 <?php
 // index.php – Landing hosting 1C + hosting/VPS/domenii, inspirat cromatic de ihc.ru, cu Tailwind.
+$contact_success = '';
+$contact_error   = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Colectăm datele din formular
+    $nume   = isset($_POST['nume'])   ? trim($_POST['nume'])   : '';
+    $email  = isset($_POST['email'])  ? trim($_POST['email'])  : '';
+    $mesaj  = isset($_POST['mesaj'])  ? trim($_POST['mesaj'])  : '';
+    // Validare simplă
+    if ($nume === '' || $email === '' || $mesaj === '') {
+        $contact_error = 'Te rugăm să completezi numele, emailul și mesajul.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $contact_error = 'Adresa de email nu este validă.';
+    } else {
+        // Date pentru email
+        $to      = 'cojocari.v88@gmail.com';          // destinatarul final
+        $from    = 'contact@ondsolutions.md';        // adresa de pe domeniu
+        $subject = 'Mesaj nou de pe formularul Smart Solutions';
+        $body  = "Ai primit un mesaj nou de pe site.\r\n\r\n";
+        $body .= "Nume: {$nume}\r\n";
+        $body .= "Email: {$email}\r\n\r\n";
+        $body .= "Mesaj:\r\n{$mesaj}\r\n";
+        $headers   = "From: \"Smart Solutions\" <{$from}>\r\n";
+        $headers  .= "Reply-To: {$email}\r\n";
+        $headers  .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        if (@mail($to, $subject, $body, $headers)) {
+            $contact_success = 'Mesajul a fost trimis cu succes. Îți vom răspunde în cel mai scurt timp.';
+            // Golește câmpurile după trimitere reușită
+            $nume = $email = $mesaj = '';
+        } else {
+            $contact_error = 'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct pe email.';
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ro">
@@ -738,13 +771,23 @@ textarea {
                     </div>
                 </div>
 
-                <form method="post" action="" class="glass-soft border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-strong space-y-3">
+                <form method="post" action="#contact" class="glass-soft border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-strong space-y-3">
+                    <?php if (!empty($contact_success)) : ?>
+    <div class="mb-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-[11px] text-emerald-700">
+        <?php echo htmlspecialchars($contact_success, ENT_QUOTES, 'UTF-8'); ?>
+    </div>
+<?php elseif (!empty($contact_error)) : ?>
+    <div class="mb-2 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-[11px] text-red-700">
+        <?php echo htmlspecialchars($contact_error, ENT_QUOTES, 'UTF-8'); ?>
+    </div>
+<?php endif; ?>
                     <div>
                         <label class="mb-1 block text-[11px] font-medium text-slate-800">Nume complet</label>
                         <input
                             type="text"
                             name="nume"
                             placeholder="Numele tău"
+                             value="<?php echo isset($nume) ? htmlspecialchars($nume, ENT_QUOTES, 'UTF-8') : ''; ?>"
                             class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-ihcBlue focus:outline-none focus:ring-1 focus:ring-ihcBlue"
                         >
                     </div>
@@ -754,6 +797,7 @@ textarea {
                             type="email"
                             name="email"
                             placeholder="email@firma.ro"
+                            value="<?php echo isset($email) ? htmlspecialchars($email, ENT_QUOTES, 'UTF-8') : ''; ?>"
                             class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-ihcBlue focus:outline-none focus:ring-1 focus:ring-ihcBlue"
                         >
                     </div>
@@ -763,7 +807,7 @@ textarea {
                             name="mesaj"
                             placeholder="Spune‑ne câte ceva despre 1C și site‑urile tale, și ce ai nevoie."
                             class="min-h-[90px] w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-ihcBlue focus:outline-none focus:ring-1 focus:ring-ihcBlue"
-                        ></textarea>
+                        ><?php echo isset($mesaj) ? htmlspecialchars($mesaj, ENT_QUOTES, 'UTF-8') : ''; ?></textarea>
                     </div>
                     <button
                         type="submit"
