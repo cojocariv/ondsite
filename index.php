@@ -1,7 +1,8 @@
 <?php
-// index.php – Landing hosting 1C + hosting/VPS/domenii, inspirat cromatic de ihc.ru, cu Tailwind.
+// index.php – Landing hosting 1C + hosting/VPS/domenii, cu trimitere email prin SMTP
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+// IMPORTANT: asigură-te că ai urcat aceste fișiere în httpdocs/phpmailer/src/
 require __DIR__ . '/phpmailer/src/Exception.php';
 require __DIR__ . '/phpmailer/src/PHPMailer.php';
 require __DIR__ . '/phpmailer/src/SMTP.php';
@@ -20,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // Setări SMTP
             $mail->isSMTP();
-            $mail->Host       = 'smtp.ondsolutions.md';
+            $mail->Host       = 'smtp.ondsolutions.md';   // sau smtp.ondsolutions.md, după caz
             $mail->SMTPAuth   = true;
             $mail->Username   = 'contact@ondsolutions.md';
-            $mail->Password   = 'AAD1sup@$$'; // pune parola reală a căsuței
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // pentru port 465
+            $mail->Password   = 'AAD1sup@$$';         // parola reală a căsuței
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // TLS pe port 465
             $mail->Port       = 465;
             $mail->CharSet    = 'UTF-8';
             // Expeditor / destinatar
@@ -43,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nume = $email = $mesaj = '';
         } catch (Exception $e) {
             $contact_error = 'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct pe email.';
+            // opțional: pentru debug poți afișa $e->getMessage() cât timp testezi
+            // $contact_error .= ' (detaliu: ' . $e->getMessage() . ')';
         }
     }
 }
