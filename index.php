@@ -33,13 +33,13 @@
         border-color 0.2s ease-out,
         background-color 0.2s ease-out;
     transform: translateY(0) scale(1);
+    background-color: rgba(255, 255, 255, 0.9);
 }
-
 .card-anim:hover {
     transform: translateY(-4px) scale(1.01);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-    border-color: rgba(37, 99, 235, 0.5); /* ihcBlue */
-    background-color: rgba(255, 255, 255, 0.96);
+    border-color: rgba(37, 99, 235, 0.55);          /* ihcBlue */
+    background-color: rgba(239, 246, 255, 0.98);    /* albastru foarte deschis compatibil */
 }
         .no-select {
     -webkit-user-select: none; /* Safari */
