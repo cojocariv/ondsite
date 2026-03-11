@@ -50,27 +50,25 @@
             box-shadow: 0 0 0 5px rgba(34,197,94,0.18);
         }
         .btn-anim {
-    transition:
-        transform 0.18s ease-out,
-        box-shadow 0.18s ease-out,
-        filter 0.18s ease-out,
-        background-color 0.18s ease-out,
-        border-color 0.18s ease-out,
-        color 0.18s ease-out;
-    transform: translateY(0) scale(1);
-}
-
-.btn-anim:hover {
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
-    filter: brightness(1.03);
-}
-
-.btn-anim:active {
-    transform: translateY(0) scale(0.97);
-    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25);
-    filter: brightness(0.97);
-}
+            transition:
+                transform 0.18s ease-out,
+                box-shadow 0.18s ease-out,
+                filter 0.18s ease-out,
+                background-color 0.18s ease-out,
+                border-color 0.18s ease-out,
+                color 0.18s ease-out;
+            transform: translateY(0) scale(1);
+        }
+        .btn-anim:hover {
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+            filter: brightness(1.03);
+        }
+        .btn-anim:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25);
+            filter: brightness(0.97);
+        }
     </style>
 </head>
 <body class="text-slate-900 antialiased">
@@ -101,13 +99,13 @@
         <div class="hidden items-center gap-3 md:flex">
             <button
                 onclick="scrollToSection('1c')"
-                class="inline-flex items-center rounded-full border border-slate-300 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700 transition hover:border-ihcBlue hover:text-ihcBlue"
+                class="btn-anim inline-flex items-center rounded-full border border-slate-300 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700 hover:border-ihcBlue hover:text-ihcBlue"
             >
                 Hosting 1C
             </button>
             <a
                 href="#contact"
-                class="inline-flex items-center rounded-full bg-gradient-to-r from-ihcOrange to-ihcBlue px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-ihcBlue/40 transition hover:brightness-110"
+                class="btn-anim inline-flex items-center rounded-full bg-gradient-to-r from-ihcOrange to-ihcBlue px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-ihcBlue/40 hover:brightness-110"
             >
                 Cere ofertă
             </a>
@@ -155,13 +153,13 @@
                 <div class="mb-6 flex flex-wrap gap-3">
                     <button
                         onclick="scrollToSection('1c')"
-                        class="inline-flex items-center rounded-full bg-ihcBlue px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-md shadow-ihcBlue/40 transition hover:bg-ihcBlueDark"
+                        class="btn-anim inline-flex items-center rounded-full bg-ihcBlue px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-md shadow-ihcBlue/40 hover:bg-ihcBlueDark"
                     >
                         Detalii hosting 1C
                     </button>
                     <button
                         onclick="scrollToSection('contact')"
-                        class="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700 transition hover:border-ihcBlue hover:text-ihcBlue"
+                        class="btn-anim inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700 hover:border-ihcBlue hover:text-ihcBlue"
                     >
                         Cere o ofertă personalizată
                     </button>
@@ -264,7 +262,7 @@
 
                 <button
                     onclick="scrollToSection('contact')"
-                    class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-ihcOrange to-ihcBlue px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-ihcBlue/40 transition hover:brightness-110"
+                    class="btn-anim mt-4 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-ihcOrange to-ihcBlue px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-ihcBlue/40 hover:brightness-110"
                 >
                     Cere ofertă detaliată
                 </button>
@@ -354,7 +352,7 @@
                     </ul>
                     <button
                         onclick="scrollToSection('contact')"
-                        class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-ihcBlue bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-ihcBlue transition hover:bg-ihcBlue hover:text-white"
+                        class="btn-anim mt-5 inline-flex w-full items-center justify-center rounded-full border border-ihcBlue bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-ihcBlue hover:bg-ihcBlue hover:text-white"
                     >
                         Discută cu un consultant 1C
                     </button>
@@ -582,7 +580,7 @@
 
                     <button
                         onclick="scrollToSection('contact')"
-                        class="mt-4 inline-flex w-full items-center justify-center rounded-full border border-ihcBlue bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-ihcBlue transition hover:bg-ihcBlue hover:text-white"
+                        class="btn-anim mt-4 inline-flex w-full items-center justify-center rounded-full border border-ihcBlue bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-ihcBlue hover:bg-ihcBlue hover:text-white"
                     >
                         Cere o ofertă personalizată
                     </button>
@@ -616,7 +614,7 @@
                     >
                     <button
                         type="submit"
-                        class="inline-flex items-center justify-center rounded-full bg-ihcBlue px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-md shadow-ihcBlue/40 transition hover:bg-ihcBlueDark"
+                        class="btn-anim inline-flex items-center justify-center rounded-full bg-ihcBlue px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-md shadow-ihcBlue/40 hover:bg-ihcBlueDark"
                     >
                         Verifică domeniu
                     </button>
@@ -730,7 +728,7 @@
                     </div>
                     <button
                         type="submit"
-                        class="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-ihcOrange to-ihcBlue px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-ihcBlue/40 transition hover:brightness-110"
+                        class="btn-anim inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-ihcOrange to-ihcBlue px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-ihcBlue/40 hover:brightness-110"
                     >
                         Trimite cererea
                     </button>
@@ -833,26 +831,18 @@
         const value = (input.value || '').trim();
 
         if (!value) {
-            result.textContent = 'Te rugăm să introduci un nume de domeniu';
+            result.textContent = 'Te rugăm să introduci un nume de domeniu.';
             return;
         }
 
         result.textContent =
-            'Verificăm disponibilitatea pentru „' + value +
-            '”. Un consultant îți va trimite oferta pe email în cel mai scurt timp.';
+            'Am trimis domeniul „' + value +
+            '” către host.md pentru verificare. Vezi rezultatul în noul tab deschis.';
+
+        const url = 'https://www.host.md/?pag=domains&domain=' + encodeURIComponent(value);
+        window.open(url, '_blank');
     }
 </script>
-<!-- Script live chat Tawk.to -->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/XXXXXXXXXX/XXXXXXXXXX'; // înlocuiești cu linkul tău
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
+
 </body>
 </html>
