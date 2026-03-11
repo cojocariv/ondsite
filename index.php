@@ -49,6 +49,28 @@
         .pill-dot {
             box-shadow: 0 0 0 5px rgba(34,197,94,0.18);
         }
+        .btn-anim {
+    transition:
+        transform 0.18s ease-out,
+        box-shadow 0.18s ease-out,
+        filter 0.18s ease-out,
+        background-color 0.18s ease-out,
+        border-color 0.18s ease-out,
+        color 0.18s ease-out;
+    transform: translateY(0) scale(1);
+}
+
+.btn-anim:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+    filter: brightness(1.03);
+}
+
+.btn-anim:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25);
+    filter: brightness(0.97);
+}
     </style>
 </head>
 <body class="text-slate-900 antialiased">
