@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->CharSet    = 'UTF-8';
             // Expeditor / destinatar
             $mail->setFrom('contact@ondsolutions.md', 'Smart Solutions');
-            $mail->addAddress('cojocari.v88@gmail.com');
+            $mail->addAddress('sales@ondsolutions.md');
             $mail->addReplyTo($email, $nume);
             // Conținut
             $mail->Subject = 'Mesaj nou de pe formularul Smart Solutions';
