@@ -811,7 +811,7 @@
         const value = (input.value || '').trim();
 
         if (!value) {
-            result.textContent = 'Te rugăm să introduci un nume de domeniu.';
+            result.textContent = 'Te rugăm să introduci un nume de domeniu';
             return;
         }
 
