@@ -48,11 +48,24 @@
             user-select: none;
         }
         body {
-            background:
-                radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 55%),
-                radial-gradient(circle at top right, rgba(249,115,22,0.10), transparent 55%),
-                #f3f4f6;
-        }
+    background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 55%),
+        radial-gradient(circle at top right, rgba(249,115,22,0.10), transparent 55%),
+        #f3f4f6;
+    /* NU permite selectarea / inserarea de text în conținut */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Standard */
+}
+/* Permite selectarea și introducerea de text doar în input-uri și textarea */
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
         .glass {
             background: rgba(255,255,255,0.9);
             backdrop-filter: blur(18px);
