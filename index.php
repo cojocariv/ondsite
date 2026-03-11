@@ -436,7 +436,7 @@
                 </article>
 
                 <!-- Plan 2 -->
-                <article class="no-select card-anim glass-soft border border-ihcBlue/70 ring-1 ring-ihcBlue/20 rounded-2xl p-4 pb-5 shadow-strong">
+                <article class="no-select card-anim glass-soft border border-slate-200 rounded-2xl p-4 pb-5">
                     <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-ihcBlue/10 px-2.5 py-1">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                         <span class="text-[11px] font-medium text-ihcBlueDark">Recomandat pentru magazine online</span>
