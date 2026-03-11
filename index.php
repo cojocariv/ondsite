@@ -58,6 +58,10 @@
     -ms-user-select: none;     /* IE/Edge */
     user-select: none;         /* Standard */
 }
+/* Corectează poziția la scroll pentru secțiunile cu id (sub meniul sticky) */
+section[id] {
+    scroll-margin-top: 90px; /* ajustează dacă header-ul e mai mare/mic */
+}
 /* Permite selectarea și introducerea de text doar în input-uri și textarea */
 input,
 textarea {
