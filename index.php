@@ -26,6 +26,21 @@
     </script>
 
     <style>
+        .card-anim {
+    transition:
+        transform 0.2s ease-out,
+        box-shadow 0.2s ease-out,
+        border-color 0.2s ease-out,
+        background-color 0.2s ease-out;
+    transform: translateY(0) scale(1);
+}
+
+.card-anim:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+    border-color: rgba(37, 99, 235, 0.5); /* ihcBlue */
+    background-color: rgba(255, 255, 255, 0.96);
+}
         .no-select {
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none;    /* Firefox */
@@ -385,7 +400,7 @@
 
             <div class="mt-8 grid gap-5 md:grid-cols-3">
                 <!-- Plan 1 -->
-                <article class="no-select glass-soft border border-slate-200 rounded-2xl p-4 pb-5 transition hover:border-ihcBlue/70 hover:shadow-strong">
+                <article class="no-select card-anim glass-soft border border-slate-200 rounded-2xl p-4 pb-5">
                     <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                         <span class="text-[11px] font-medium text-slate-800">Începători & bloguri</span>
