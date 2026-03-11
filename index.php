@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->send();
             $contact_success = 'Mesajul a fost trimis cu succes. Îți vom răspunde în cel mai scurt timp.';
             $nume = $email = $mesaj = '';
-        } catch (Exception $e) {
-            $contact_error = 'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct pe email.';
-            // opțional: pentru debug poți afișa $e->getMessage() cât timp testezi
-            // $contact_error .= ' (detaliu: ' . $e->getMessage() . ')';
+          } catch (Exception $e) {
+            // pentru moment afișăm și mesajul real de la PHPMailer
+            $contact_error = 'A apărut o eroare la trimiterea mesajului: ' .
+                htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
         }
     }
 }
