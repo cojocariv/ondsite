@@ -208,7 +208,7 @@
                             type="range"
                             min="1"
                             max="30"
-                            value="3"
+                            value="1"
                             class="w-full accent-ihcBlue"
                         >
                     </div>
@@ -224,7 +224,7 @@
                             min="10"
                             max="200"
                             step="10"
-                            value="20"
+                            value="10"
                             class="w-full accent-ihcBlue"
                         >
                     </div>
@@ -238,7 +238,7 @@
                             id="fg-inst"
                             type="range"
                             min="1"
-                            max="5"
+                            max="20"
                             step="1"
                             value="1"
                             class="w-full accent-ihcBlue"
