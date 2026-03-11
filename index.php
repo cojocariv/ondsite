@@ -26,6 +26,12 @@
     </script>
 
     <style>
+        .no-select {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Standard */
+}
         body {
             background:
                 radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 55%),
@@ -379,7 +385,7 @@
 
             <div class="mt-8 grid gap-5 md:grid-cols-3">
                 <!-- Plan 1 -->
-                <article class="glass-soft border border-slate-200 rounded-2xl p-4 pb-5 transition hover:border-ihcBlue/70 hover:shadow-strong">
+                <article class="no-select glass-soft border border-slate-200 rounded-2xl p-4 pb-5 transition hover:border-ihcBlue/70 hover:shadow-strong">
                     <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                         <span class="text-[11px] font-medium text-slate-800">Începători & bloguri</span>
@@ -415,7 +421,7 @@
                 </article>
 
                 <!-- Plan 2 -->
-                <article class="glass-soft border border-ihcBlue/70 ring-1 ring-ihcBlue/20 rounded-2xl p-4 pb-5 shadow-strong">
+                <article class="no-select glass-soft border border-ihcBlue/70 ring-1 ring-ihcBlue/20 rounded-2xl p-4 pb-5 shadow-strong">
                     <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-ihcBlue/10 px-2.5 py-1">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                         <span class="text-[11px] font-medium text-ihcBlueDark">Recomandat pentru magazine online</span>
@@ -451,7 +457,7 @@
                 </article>
 
                 <!-- Plan 3 -->
-                <article class="glass-soft border border-slate-200 rounded-2xl p-4 pb-5 transition hover:border-ihcBlue/70 hover:shadow-strong">
+                <article class="no-select glass-soft border border-slate-200 rounded-2xl p-4 pb-5 transition hover:border-ihcBlue/70 hover:shadow-strong">
                     <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                         <span class="text-[11px] font-medium text-slate-800">Companii & aplicații</span>
