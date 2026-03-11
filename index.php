@@ -27,26 +27,26 @@
 
     <style>
         .card-anim {
-    transition:
-        transform 0.2s ease-out,
-        box-shadow 0.2s ease-out,
-        border-color 0.2s ease-out,
-        background-color 0.2s ease-out;
-    transform: translateY(0) scale(1);
-    background-color: rgba(255, 255, 255, 0.9);
-}
-.card-anim:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-    border-color: rgba(37, 99, 235, 0.55);          /* ihcBlue */
-    background-color: rgba(239, 246, 255, 0.98);    /* albastru foarte deschis compatibil */
-}
+            transition:
+                transform 0.2s ease-out,
+                box-shadow 0.2s ease-out,
+                border-color 0.2s ease-out,
+                background-color 0.2s ease-out;
+            transform: translateY(0) scale(1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .card-anim:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+            border-color: rgba(37, 99, 235, 0.55);          /* ihcBlue */
+            background-color: rgba(239, 246, 255, 0.98);    /* albastru foarte deschis compatibil */
+        }
         .no-select {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE/Edge */
-    user-select: none;         /* Standard */
-}
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
         body {
             background:
                 radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 55%),
@@ -337,7 +337,22 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- Lista extinsă de servicii -->
+                    <div class="mt-6">
+                        <p class="mb-2 text-[12px] font-semibold text-slate-900">Servicii incluse:</p>
+                        <ul class="list-disc space-y-1 pl-5 text-[11px] text-slate-700">
+                            <li>Configurare și conectare domeniu, inclusiv integrare domeniu în Cloudflare.</li>
+                            <li>Instalarea și configurarea platformei 1C pe server.</li>
+                            <li>Instalare și configurare baze de date SQL.</li>
+                            <li>Conectare soft pe stațiile de lucru și suport în procesul implementării.</li>
+                            <li>Management utilizatori și accese în baza de date.</li>
+                            <li>Suport tehnic și consultanță pe parcursul implementării și ulterior.</li>
+                            <li>Transferul de date din baze de date vechi aferente clienților și mărfurilor.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="glass-soft border border-slate-200 rounded-2xl p-5 shadow-strong">
                     <h3 class="text-sm font-semibold text-slate-900">
                         Exemple de scenarii pentru hosting 1C
@@ -427,17 +442,17 @@
                         </li>
                     </ul>
                     <div class="mt-4">
-    <p class="text-xs text-slate-500">De la</p>
-    <p class="text-xl font-semibold text-slate-900">
-        9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>
-    </p>
-    <p class="text-[11px] text-slate-500">
-        la plata anuală
-        <span class="ml-2 text-[10px] text-slate-500">
-            (15 lei / lună la plata lunară)
-        </span>
-    </p>
-</div>
+                        <p class="text-xs text-slate-500">De la</p>
+                        <p class="text-xl font-semibold text-slate-900">
+                            9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>
+                        </p>
+                        <p class="text-[11px] text-slate-500">
+                            la plata anuală
+                            <span class="ml-2 text-[10px] text-slate-500">
+                                (15 lei / lună la plata lunară)
+                            </span>
+                        </p>
+                    </div>
                 </article>
 
                 <!-- Plan 2 -->
@@ -615,7 +630,7 @@
         </div>
     </section>
 
-    <!-- DOMAINS -->
+    <!-- DOMENII -->
     <section id="domenii" class="border-b border-slate-200 bg-slate-100/70">
         <div class="mx-auto max-w-6xl px-4 py-10 lg:px-6 lg:py-14">
             <p class="text-[11px] font-semibold uppercase tracking-[0.28em] text-ihcBlue">
@@ -726,25 +741,6 @@
                         >
                     </div>
                     <div>
-                        <label class="mb-1 block text-[11px] font-medium text-slate-800">Website existent (opțional)</label>
-                        <input
-                            type="text"
-                            name="site"
-                            placeholder="https://exemplu.ro"
-                            class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-ihcBlue focus:outline-none focus:ring-1 focus:ring-ihcBlue"
-                        >
-                    </div>
-                    <div>
-                        <label class="mb-1 block text-[11px] font-medium text-slate-800">Număr utilizatori 1C (aprox.)</label>
-                        <input
-                            type="number"
-                            name="users_1c"
-                            min="1"
-                            placeholder="ex: 5"
-                            class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-ihcBlue focus:outline-none focus:ring-1 focus:ring-ihcBlue"
-                        >
-                    </div>
-                    <div>
                         <label class="mb-1 block text-[11px] font-medium text-slate-800">Mesaj</label>
                         <textarea
                             name="mesaj"
@@ -848,8 +844,7 @@
         if (el) el.addEventListener('input', calcPrice1C);
     });
     calcPrice1C();
-    // Hover price change for first hosting plan
-   
+
     function handleDomainCheck(e) {
         e.preventDefault();
         const input = document.getElementById('domain-input');
