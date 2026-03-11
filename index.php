@@ -537,7 +537,7 @@
                     <div class="grid gap-3 text-xs text-slate-300 sm:grid-cols-2">
                         <div class="rounded-xl border border-slate-800 bg-slate-950/90 p-3">
                             <p class="text-[11px] font-semibold text-slate-100">Email vânzări</p>
-                            <p class="text-slate-400">sales@secrethosting.ro</p>
+                            <p class="text-slate-400">sales@ondsolutions.md</p>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/90 p-3">
                             <p class="text-[11px] font-semibold text-slate-100">Suport tehnic</p>
