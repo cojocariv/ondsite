@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // Setări SMTP
             $mail->isSMTP();
-            $mail->Host       = 'smtp.ondsolutions.md';   // sau smtp.ondsolutions.md, după caz
+            $mail->Host       = 'mail.ondsolutions.md';   // sau smtp.ondsolutions.md, după caz
             $mail->SMTPAuth   = true;
             $mail->Username   = 'contact@ondsolutions.md';
             $mail->Password   = 'AAD1sup@$$';         // parola reală a căsuței
