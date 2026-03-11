@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $contact_error = 'Adresa de email nu este validă.';
     } else {
         // Date pentru email
-        $to      = 'cojocari.v88@gmail.com';          // destinatarul final
+        $to      = 'sales@ondsolutions.md';          // destinatarul final
         $from    = 'contact@ondsolutions.md';        // adresa de pe domeniu
         $subject = 'Mesaj nou de pe formularul Smart Solutions';
         $body  = "Ai primit un mesaj nou de pe site.\r\n\r\n";
