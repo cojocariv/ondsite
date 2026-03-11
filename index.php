@@ -5,7 +5,7 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>Hosting 1C & VPS modern | Secret Hosting</title>
+    <title>Hosting 1C & VPS modern | Smart Solutions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Tailwind CDN -->
@@ -82,7 +82,7 @@
             </div>
             <div class="flex flex-col leading-tight">
                 <span class="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-800">
-                    Secret Hosting
+                    Smart Solutions
                 </span>
                 <span class="text-[10px] text-slate-500">Hosting 1C • VPS • Domenii</span>
             </div>
@@ -663,11 +663,11 @@
                     <div class="grid gap-3 text-xs text-slate-700 sm:grid-cols-2">
                         <div class="rounded-xl border border-slate-200 bg-slate-50 p-3">
                             <p class="text-[11px] font-semibold text-slate-900">Email vânzări</p>
-                            <p class="text-slate-600">sales@secrethosting.ro</p>
+                            <p class="text-slate-600">sales@ondsolutions.md</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-slate-50 p-3">
                             <p class="text-[11px] font-semibold text-slate-900">Suport tehnic</p>
-                            <p class="text-slate-600">support@secrethosting.ro</p>
+                            <p class="text-slate-600">support@ondsolutions.md</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-slate-50 p-3">
                             <p class="text-[11px] font-semibold text-slate-900">Telefon</p>
@@ -751,7 +751,7 @@
                         S
                     </div>
                     <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-800">
-                        Secret Hosting
+                        Smart Solutions
                     </span>
                 </div>
                 <p class="max-w-xs text-[11px] text-slate-600">
@@ -780,7 +780,7 @@
         </div>
 
         <div class="mt-4 flex flex-col gap-2 text-[11px] text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-            <span>© <?php echo date('Y'); ?> Secret Hosting SRL. Toate drepturile rezervate.</span>
+            <span>© <?php echo date('Y'); ?> OND SOLUTIONS SRL. Toate drepturile rezervate.</span>
             <span>Metode de plată: card, transfer bancar, facturare pentru firme.</span>
         </div>
     </div>
