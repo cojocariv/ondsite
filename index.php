@@ -807,7 +807,7 @@
         document.getElementById('fg-space-val').textContent = space + ' GB';
         document.getElementById('fg-inst-val').textContent = inst;
 
-        let base = 150;
+        let base = 330;
         base += (users - 1) * 50;
         base += (space - 10) / 10 * 8;
         base += (inst - 1) * 30;
