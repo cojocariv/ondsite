@@ -428,10 +428,15 @@
                     </ul>
                     <div class="mt-4">
     <p class="text-xs text-slate-500">De la</p>
-    <p id="plan1-price" class="text-xl font-semibold text-slate-900">
+    <p class="text-xl font-semibold text-slate-900">
         9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>
     </p>
-    <p id="plan1-note" class="text-[11px] text-slate-500">la plata anuală</p>
+    <p class="text-[11px] text-slate-500">
+        la plata anuală
+        <span class="ml-2 text-[10px] text-slate-500">
+            (15 lei / lună la plata lunară)
+        </span>
+    </p>
 </div>
                 </article>
 
@@ -844,21 +849,7 @@
     });
     calcPrice1C();
     // Hover price change for first hosting plan
-    const plan1Card  = document.getElementById('plan1-card');
-    const plan1Price = document.getElementById('plan1-price');
-    const plan1Note  = document.getElementById('plan1-note');
-
-    if (plan1Card && plan1Price && plan1Note) {
-        plan1Card.addEventListener('mouseenter', () => {
-            plan1Price.innerHTML = '15 lei <span class="text-xs font-normal text-slate-500">/ lună</span>';
-            plan1Note.textContent = 'la plata lunară';
-        });
-
-        plan1Card.addEventListener('mouseleave', () => {
-            plan1Price.innerHTML = '9 lei <span class="text-xs font-normal text-slate-500">/ lună</span>';
-            plan1Note.textContent = 'la plata anuală';
-        });
-    }
+   
     function handleDomainCheck(e) {
         e.preventDefault();
         const input = document.getElementById('domain-input');
