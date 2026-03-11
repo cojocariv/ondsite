@@ -835,8 +835,8 @@
 
         let base = 330;
         base += (users - 1) * 50;
-        base += (space - 10) / 30 * 8;
-        base += (inst - 1) * 90;
+        base += (space - 10) / 70 * 8;
+        base += (inst - 1) * 50;
 
         const price = Math.max(150, Math.round(base));
         document.getElementById('fg-price').innerHTML =
