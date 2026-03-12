@@ -309,7 +309,7 @@ textarea {
                             id="fg-space"
                             type="range"
                             min="10"
-                            max="200"
+                            max="1000"
                             step="10"
                             value="10"
                             class="w-full accent-ihcBlue"
@@ -908,7 +908,7 @@ textarea {
 
         let base = 330;
         base += (users - 1) * 30;
-        base += (space - 10) / 70 * 8;
+        base += (space - 10) / 100 * 8;
         base += (inst - 1) * 30;
 
         const price = Math.max(150, Math.round(base));
